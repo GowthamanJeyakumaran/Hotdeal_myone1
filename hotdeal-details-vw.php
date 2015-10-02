@@ -459,7 +459,7 @@
                                 
                             <script type="text/javascript">
                                 $(document).ready(function () {
-                                    $('.hide-btn').hide('fast');
+                                    $('.hide-btn').hide();
                                     $(".toggle-false").click(function () {
                                         $("#hot").collapse({
                                             toggle: false
@@ -467,13 +467,13 @@
                                     });
                                     $(".show-btn").click(function () {
                                         $("#hot").slideDown('show');
-                                        $("#hideButton").show('slow');
-                                        $('.show-btn').hide('fast');
+                                        $("#hideButton").show();
+                                        $('.show-btn').hide();
                                     });
                                     $(".hide-btn").click(function () {
                                         $("#hot").slideUp('hide');
-                                        $('.hide-btn').hide('fast');
-                                        $('.show-btn').show('fast');
+                                        $('.hide-btn').hide("very slow");
+                                        $('.show-btn').show();
                                     });
                                 });
                             </script>
