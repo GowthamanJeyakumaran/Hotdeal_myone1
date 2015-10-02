@@ -703,89 +703,7 @@ foreach ($hot_deal_info_arr as $index => $hot_deal_info) {
 
    <button type="button" id="hideButton" class="btn btn-primary hide-btn"   > <span class=" glyphicon glyphicon-chevron-up" aria-hidden="true"></span> hide rooms </button>
 
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             <div id="termsCondition" class="col-md-12">                                
                                 <style>
@@ -829,12 +747,25 @@ if ($hot_deal_TC_arr) {
                                             }
                                             ?> 
                                 </div>
-                            </div>
-                            <div id="hotel-slider" class="col-md-12">
-                                    <?php $this->load->view('slider-view'); ?>
-                            </div>
+                            </div>                           
                             <div class="clearfix"></div>
-                            <!--</div>-->                    
+                            <!--</div>--> 
+                           
+                            <div>
+                                <style>
+                                    .TcCell{}
+                                    .single-black-border{border-bottom: 1px dotted black;padding: 5px;}
+                                    .tc-div{background-color: whitesmoke;padding: 20px;border-radius: 5px;margin-bottom: 20px;}
+                                </style>
+                             <div class="col-md-12 tc-div">
+                     <!-- Loadig slider view and pass hotel informations -->
+                                  <h4 class="margine-left-1">Hotels Nearby : <?php echo $city['city_info']; ?></h4>
+                                  <hr>
+                                  <?php $this->load->view('slider-view',array($hotel_info)); ?>  
+                                    
+                             </div>                                         
+                        </div> 
+                            
                         </div>                
                     </div> 
                 </div>
