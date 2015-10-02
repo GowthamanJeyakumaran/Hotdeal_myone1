@@ -121,8 +121,8 @@
                                     <!--HD images slider-->
                                     <div class="col-md-8">
                                         <?php
-                                        $dirF = "hmgt/assist/photo-gallery/$hotel_id/Views";
-                                        $dirRooms = "/hmgt/assist/photo-gallery/$hotel_id/Room";
+                                        $dirF = "HMGT1/assist/photo-gallery/$hotel_id/Views";
+                                        $dirRooms = "/HMGT1/assist/photo-gallery/$hotel_id/Room";
                                         $filesF = scandir($dirF);
 
                                         $viewPicture = array();
@@ -455,6 +455,8 @@
                             ?>
                            
                             <!--   Toggle button  Show / Hide Script -->   
+                            
+                                
                             <script type="text/javascript">
                                 $(document).ready(function () {
                                     $('.hide-btn').hide('fast');
@@ -479,8 +481,8 @@
                            
                             <!-- Button  Show  -->
                             
-                            <div class="bs-example" style=" padding-center:1%;" >
-                                <button type="button" id="moreButton" class="btn btn-primary show-btn"> <span class=" glyphicon glyphicon-chevron-down" aria-hidden="true"></span> more rooms </button>
+                            <div class="bs-example" style=" padding-center:1%;" text >
+                                <button type="button" id="moreButton" class="btn btn-primary show-btn" style='margin-left: 10px;'> <span class=" glyphicon glyphicon-chevron-down" aria-hidden="true"></span> more rooms </button>
                                 <script>
                                     $("#moreButton").on('click', function () {
 
@@ -701,7 +703,8 @@ foreach ($hot_deal_info_arr as $index => $hot_deal_info) {
 
                             <!--Toggle button  Hide -->
 
-   <button type="button" id="hideButton" class="btn btn-primary hide-btn"   > <span class=" glyphicon glyphicon-chevron-up" aria-hidden="true"></span> hide rooms </button>
+   <button type="button" id="hideButton" class="btn btn-primary hide-btn" style='margin-left: 10px;' > <span class=" glyphicon glyphicon-chevron-up" aria-hidden="true"></span> hide rooms </button>
+
 
 </div>
 
@@ -747,24 +750,27 @@ if ($hot_deal_TC_arr) {
                                             }
                                             ?> 
                                 </div>
-                            </div>                           
+                            </div>
+                            
+                            
                             <div class="clearfix"></div>
-                            <!--</div>--> 
-                           
+                            <!--</div>-->   
+ <!--  hotel info slider loading and passing data-->                         
                             <div>
                                 <style>
                                     .TcCell{}
                                     .single-black-border{border-bottom: 1px dotted black;padding: 5px;}
                                     .tc-div{background-color: whitesmoke;padding: 20px;border-radius: 5px;margin-bottom: 20px;}
                                 </style>
-                             <div class="col-md-12 tc-div">
-                     <!-- Loadig slider view and pass hotel informations -->
-                                  <h4 class="margine-left-1">Hotels Nearby : <?php echo $city['city_info']; ?></h4>
-                                  <hr>
-                                  <?php $this->load->view('slider-view',array($hotel_info)); ?>  
+                                
+                                <div class="col-md-14 tc-div">
+                                    <h4 class="margine-left-1">Hotels Nearby : <?php echo $city['city_info'];?></h4>
+                                    <hr>
                                     
-                             </div>                                         
-                        </div> 
+                                            <?php $this->load->view('slider-view',$hotel_info); ?>
+                                    
+                                </div>
+                            </div>
                             
                         </div>                
                     </div> 
@@ -781,7 +787,7 @@ if ($hot_deal_TC_arr) {
             $count = 0;
             $images = array();
 //Images for the slider
-            $dir = "hmgt/assist/photo-gallery/$hotel_id/Views";
+            $dir = "HMGT1/assist/photo-gallery/$hotel_id/Views";
             $files1 = scandir($dir);
 
 //First image collection
